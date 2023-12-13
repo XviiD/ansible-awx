@@ -3,8 +3,7 @@
   hosts: all
 
   tasks:
-  - name: Add the user 'bob'
-    ansible.builtin.user:
-      name: bob
-    become: yes
-    become_method: sudo
+  - name: This command will change the working directory to somedir/
+  ansible.builtin.shell:
+    cmd: ls -l
+    chdir: /

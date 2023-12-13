@@ -3,8 +3,8 @@
   hosts: all
 
   tasks:
-  - name: Copy file hosts with permissions
-    ansible.builtin.copy:
-      src: /home/anton/testfile
-      dest: /tmp/testfile
-      mode: '0755'
+  - name: Add the user 'bob'
+    ansible.builtin.user:
+      name: bob
+    become: yes
+    become_method: sudo

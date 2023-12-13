@@ -1,7 +1,9 @@
 ---
-- name: Create a directory if it does not exist
-  ansible.builtin.file:
-    path: /etc/test12345
-    state: directory
-    mode: '0755'
+- name: Intro to Ansible Playbooks
 
+  tasks:
+  - name: Copy file hosts with permissions
+    ansible.builtin.copy:
+      src: ./hosts
+      dest: /tmp/hosts_backup
+      mode: '0644'

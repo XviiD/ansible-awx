@@ -1,9 +1,12 @@
 ---
-- name: Create Ansible folder
-  hosts: all
-  become: true
+- name: Gather Windows Facts 
+  gather_facts: yes
 
   tasks:
-    - name: Create ansible directory
-      command: mkdir /home/ubuntu/ansible
+
+  - setup:
+    register: ansible_facts
+
+  - debug: item
+    with_dict: ansible_facts
 

@@ -1,12 +1,7 @@
 ---
-- name: Gather Windows Facts 
-  gather_facts: yes
-
-  tasks:
-
-  - setup:
-    register: ansible_facts
-
-  - debug: item
-    with_dict: ansible_facts
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /etc/test12345
+    state: directory
+    mode: '0755'
 

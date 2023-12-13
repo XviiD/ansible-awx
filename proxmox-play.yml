@@ -1,0 +1,13 @@
+---
+- name: Intro to Ansible Playbooks
+  hosts: all
+
+  tasks:
+  - name: List existing users
+  community.general.proxmox_user_info:
+    api_host: "65.21.91.124:8006"
+    api_user: "anton@pam"
+    api_password: "{{ password }}"
+    api_token_id: "{{ token_id }}"
+    api_token_secret: "{{ token_secret }}"
+  register: proxmox_users

@@ -5,5 +5,5 @@
   tasks:
   - name: This command will change the working directory to somedir/
     ansible.builtin.shell:
-      cmd: ansible-galaxy collection install checkpoint.checkpoint
-      chdir: /var/lib/awx/projects/anton-awx/
+      cmd: ls
+      chdir: /var/lib/awx/projects/

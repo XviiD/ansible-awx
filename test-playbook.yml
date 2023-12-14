@@ -1,9 +1,7 @@
 ---
 - name: Intro to Ansible Playbooks
   hosts: all
-
+      
   tasks:
-  - name: This command will change the working directory to somedir/
-    ansible.builtin.shell:
-      cmd: ls
-      chdir: /var/lib/awx/projects/
+  - debug:
+     var: ansible_facts
